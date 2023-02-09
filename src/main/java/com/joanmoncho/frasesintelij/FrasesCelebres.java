@@ -1,6 +1,6 @@
-package com.germangascon.frasescelebres;
+package com.joanmoncho.frasesintelij;
 
-import com.germangascon.frasescelebres.util.Log;
+import com.joanmoncho.frasesintelij.util.Log;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

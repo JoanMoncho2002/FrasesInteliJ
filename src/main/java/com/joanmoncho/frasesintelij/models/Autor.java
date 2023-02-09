@@ -1,6 +1,6 @@
-package com.germangascon.frasescelebres.models;
+package com.joanmoncho.frasesintelij.models;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity

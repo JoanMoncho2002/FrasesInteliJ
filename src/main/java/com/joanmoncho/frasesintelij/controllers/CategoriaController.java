@@ -1,9 +1,8 @@
-package com.germangascon.frasescelebres.controllers;
+package com.joanmoncho.frasesintelij.controllers;
 
-
-import com.germangascon.frasescelebres.models.Categoria;
-import com.germangascon.frasescelebres.repo.ICategoriaDao;
-import com.germangascon.frasescelebres.util.Log;
+import com.joanmoncho.frasesintelij.models.Categoria;
+import com.joanmoncho.frasesintelij.repo.ICategoriaDao;
+import com.joanmoncho.frasesintelij.util.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

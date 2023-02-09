@@ -1,10 +1,10 @@
-package com.germangascon.frasescelebres.models;
+package com.joanmoncho.frasesintelij.models;
 
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.UUID;
 
-import com.germangascon.frasescelebres.util.Log;
+import com.joanmoncho.frasesintelij.util.Log;
 
 public class Usuario {
     private final static String TAG = "Usuario";

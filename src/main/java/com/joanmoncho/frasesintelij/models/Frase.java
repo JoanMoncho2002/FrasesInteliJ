@@ -1,7 +1,8 @@
-package com.germangascon.frasescelebres.models;
+package com.joanmoncho.frasesintelij.models;
+
+import jakarta.persistence.*;
 
 import java.sql.Date;
-import javax.persistence.*;
 
 @Entity
 public class Frase {

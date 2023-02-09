@@ -1,4 +1,4 @@
-package com.germangascon.frasescelebres.models;
+package com.joanmoncho.frasesintelij.models;
 
 public class Auth {
     private int id;

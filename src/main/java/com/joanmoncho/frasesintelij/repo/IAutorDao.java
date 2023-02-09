@@ -1,6 +1,6 @@
-package com.germangascon.frasescelebres.repo;
+package com.joanmoncho.frasesintelij.repo;
 
-import com.germangascon.frasescelebres.models.Autor;
+import com.joanmoncho.frasesintelij.models.Autor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

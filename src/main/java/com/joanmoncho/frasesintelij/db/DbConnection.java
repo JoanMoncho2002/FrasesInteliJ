@@ -1,4 +1,4 @@
-package com.germangascon.frasescelebres.db;
+package com.joanmoncho.frasesintelij.db;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,8 +9,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import com.germangascon.frasescelebres.FrasesCelebres;
-import com.germangascon.frasescelebres.util.Log;
+import com.joanmoncho.frasesintelij.FrasesCelebres;
+import com.joanmoncho.frasesintelij.util.Log;
 
 /**
  * Clase Singleton para obtener una conexión a la base de datos.

@@ -1,9 +1,9 @@
-package com.germangascon.frasescelebres.util;
+package com.joanmoncho.frasesintelij.util;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.germangascon.frasescelebres.FrasesCelebres;
+import com.joanmoncho.frasesintelij.FrasesCelebres;
 
 public class Log {
 
