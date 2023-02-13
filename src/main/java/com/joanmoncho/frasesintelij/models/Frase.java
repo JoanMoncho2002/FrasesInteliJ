@@ -1,7 +1,6 @@
 package com.joanmoncho.frasesintelij.models;
 
 import jakarta.persistence.*;
-
 import java.sql.Date;
 
 @Entity
