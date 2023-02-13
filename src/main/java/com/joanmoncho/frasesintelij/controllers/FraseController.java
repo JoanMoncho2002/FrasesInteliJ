@@ -19,10 +19,8 @@ import java.util.Optional;
 public class FraseController {
     @Autowired
     private IFraseDao repo;
-
     @Autowired
     private IAutorDao repoAutor;
-
     @Autowired
     private ICategoriaDao repoCategoria;
 

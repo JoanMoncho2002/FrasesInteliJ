@@ -1,8 +1,6 @@
 package com.joanmoncho.frasesintelij.controllers;
 
-import com.joanmoncho.frasesintelij.models.Autor;
 import com.joanmoncho.frasesintelij.models.Usuario;
-import com.joanmoncho.frasesintelij.repo.IAutorDao;
 import com.joanmoncho.frasesintelij.repo.IUsuarioDao;
 import com.joanmoncho.frasesintelij.util.Log;
 import org.springframework.beans.factory.annotation.Autowired;

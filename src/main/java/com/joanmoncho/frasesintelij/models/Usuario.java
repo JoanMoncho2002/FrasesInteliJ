@@ -1,48 +1,31 @@
 package com.joanmoncho.frasesintelij.models;
 
-import java.sql.Timestamp;
-import java.util.Date;
-import java.util.UUID;
+import jakarta.persistence.*;
 
-import com.joanmoncho.frasesintelij.util.Log;
-
+@Entity
+@Table(name = "usuario", schema = "frases", catalog = "")
 public class Usuario {
-    private final static String TAG = "Usuario";
-    private static final String tabla = "usuario";
-    /** Campos de la tabla */
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "id", nullable = false)
     private int id;
+    @Basic
+    @Column(name = "nombre", nullable = true, length = 50)
     private String nombre;
-    private String email;
+    @Basic
+    @Column(name = "correo", nullable = true, length = 50)
+    private String correo;
+    @Basic
+    @Column(name = "password", nullable = true, length = 50)
     private String password;
-    private String gender;
-    private String tipoUsuario;
-    private String session;
-    private String ip;
-    private Timestamp ultimaConexion;
 
-    public Usuario() {
-        init();
-    }
-
-    public void init() {
-        id = 0;
-        nombre = null;
-        email = null;
-        password = null;
-        gender = null;
-        tipoUsuario = null;
-        session = null;
-    }
+    public Usuario() {}
 
     public int getId() {
         return id;
     }
 
-    /**
-     * Hacemos el método privado ya que no permitimos modificar el id desde fuera
-     * al ser de tipo autoincrement
-     */
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -54,12 +37,12 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getPassword() {
@@ -70,75 +53,27 @@ public class Usuario {
         this.password = password;
     }
 
-    public String getGender() {
-        return gender;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Usuario that = (Usuario) o;
+
+        if (id != that.id) return false;
+        if (nombre != null ? !nombre.equals(that.nombre) : that.nombre != null) return false;
+        if (correo != null ? !correo.equals(that.correo) : that.correo != null) return false;
+        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+
+        return true;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getTipoUsuario() {
-        return tipoUsuario;
-    }
-
-    public void setTipoUsuario(String tipo) {
-        if(tipo.equals(TipoUsuario.USER) || tipo.equals(TipoUsuario.ADMIN)) {
-            this.tipoUsuario = tipo;
-        } else {
-            this.tipoUsuario = TipoUsuario.USER;
-        }
-    }
-
-    public boolean isAdmin() {
-        return this.tipoUsuario.equals(TipoUsuario.ADMIN);
-    }
-
-    public String getSession() {
-        return session;
-    }
-
-    /** La session se asigna mediante login */
-    private void setSession(String session) {
-        this.session = session;
-    }
-
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
-
-    public Timestamp getUltimaConexion() {
-        return this.ultimaConexion;
-    }
-
-    private void setUltimaConexion(Timestamp t) {
-        this.ultimaConexion = t;
-    }
-
-    public boolean validate() {
-        return nombre != null && email != null && password != null;
-    }
-
-    public String generateAuthToken() {
-        return UUID.randomUUID().toString().toLowerCase() + id;
-    }
-
-    public Timestamp getCurrentTimestamp() {
-        Date date = new Date();
-        return new Timestamp(date.getTime());
-    }
-
-    public static class Gender {
-        public final static String MASCULINO = "M";
-        public final static String FEMENINO = "F";
-    }
-
-    public static class TipoUsuario {
-        public final static String USER = "U";
-        public final static String ADMIN = "A";
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
+        result = 31 * result + (correo != null ? correo.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        return result;
     }
 }
