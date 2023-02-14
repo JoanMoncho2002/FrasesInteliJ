@@ -55,6 +55,18 @@ public class UserController {
         }
     }
 
+
+    @PostMapping("/login")
+    public boolean login(@RequestBody Usuario usuario){
+        System.out.println(usuario.toString());
+        for(Usuario users: getUsuarios()){
+            if(users.getCorreo().equals((usuario.getCorreo())) && users.getPassword().equals((usuario.getPassword()))){
+                return true;
+            }
+        }
+       return false;
+    }
+
     @DeleteMapping(value = "/{id}")
     public boolean deleteUsuario(@PathVariable("id") Integer id) {
         try {
